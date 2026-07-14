@@ -11,25 +11,53 @@
             background: radial-gradient(circle at top right, #2c3e50, #000000);
             color: #ffffff;
             margin: 0;
-            padding: 40px 20px;
+            padding: 30px 20px;
             min-height: 100vh;
         }
         .container {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 30px;
-            max-width: 800px;
+            max-width: 1250px;
             margin: auto;
             text-align: center;
         }
-        h1 { color: #00d2ff; margin-bottom: 20px; font-size: 28px; }
-        h2 { color: #ff9a9e; margin: 30px 0 20px 0; font-size: 24px; }
-        .form-container { width: 100%; border-radius: 15px; overflow: hidden; background: white; margin-bottom: 40px; }
+        h1 { color: #00d2ff; margin-bottom: 10px; font-size: 32px; text-transform: uppercase; letter-spacing: 1px; }
+        p.subtitle { color: #ff9a9e; font-size: 18px; margin-bottom: 30px; font-weight: 600; }
+        
+        /* Giao diện chia 2 cột song song hiện đại */
+        .workspace {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .section-box {
+            flex: 1;
+            min-width: 450px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            box-sizing: border-box;
+        }
+        .section-box h2 { font-size: 20px; margin-top: 0; margin-bottom: 20px; font-weight: 700; }
+        .box-chat { color: #00d2ff; }
+        .box-form { color: #ff9a9e; }
+        
+        .iframe-container { 
+            width: 100%; 
+            height: 620px; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            background: #ffffff; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .quiz-area {
+            margin-top: 40px;
+        }
         .btn-quiz {
             display: inline-block;
-            padding: 20px 40px;
+            padding: 18px 45px;
             background: linear-gradient(45deg, #00d2ff, #3a7bd5);
             color: white;
             text-decoration: none;
@@ -37,36 +65,41 @@
             font-weight: bold;
             font-size: 18px;
             transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.2);
         }
-        .btn-quiz:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 210, 255, 0.4); }
+        .btn-quiz:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 210, 255, 0.4); }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>GÓC TÂM SỰ - LẮNG NGHE & THẤU HIỂU</h1>
+        <h1>Góc Tâm Sự</h1>
+        <p class="subtitle">✨ LẮNG NGHE & THẤU HIỂU ✨</p>
         
-        <h2>💌 GỬI CHIA SẺ TÂM SỰ TẠI ĐÂY</h2>
-        <div class="form-container">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdOkFFUlrbiqhfrzr1BYzDW6wDcleTmh5ulQeHGzSvciE8E8A/viewform?embedded=true" width="100%" height="600" frameborder="0"></iframe>
+        <div class="workspace">
+            <!-- CỘT 1: TRÒ CHUYỆN VỚI AI -->
+            <div class="section-box">
+                <h2 class="box-chat">🤖 TRÒ CHUYỆN CÙNG TRỢ LÝ TÂM LÝ VÀ AI</h2>
+                <div class="iframe-container">
+                    <!-- Đã dán link Web Chat công khai chuẩn với ID Bot của bạn -->
+                    <iframe src="https://www.coze.com/store/bot/7661818497130987573" width="100%" height="100%" frameborder="0" allow="microphone; camera"></iframe>
+                </div>
+            </div>
+            
+            <!-- CỘT 2: GỬI FORM TÂM SỰ -->
+            <div class="section-box">
+                <h2 class="box-form">💌 GỬI CHIA SẺ ẨN DANH TẠI ĐÂY</h2>
+                <div class="iframe-container">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdOkFFUlrbiqhfrzr1BYzDW6wDcleTmh5ulQeHGzSvciE8E8A/viewform?embedded=true" width="100%" height="100%" frameborder="0"></iframe>
+                </div>
+            </div>
         </div>
 
-        <h2>✨ CÙNG LÀM TRẮC NGHIỆM NHÉ! ✨</h2>
-        <a href="https://www.flexiquiz.com/SC/N/28c896b2-0121-4dc0-a3aa-f3eb8b405f8e" target="_blank" class="btn-quiz">🚀 Bắt đầu trắc nghiệm đánh giá</a>
+        <!-- PHẦN TRẮC NGHIỆM -->
+        <div class="quiz-area">
+            <a href="https://www.flexiquiz.com/SC/N/28c896b2-0121-4dc0-a3aa-f3eb8b405f8e" target="_blank" class="btn-quiz">🚀 Bắt đầu trắc nghiệm đánh giá cảm xúc</a>
+        </div>
     </div>
 
-    <!-- SDK Coze -->
-    <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
-    
-    <script>
-      new CozeWebSDK.WebChatClient({
-        config: {
-          bot_id: '7661818497130987573',
-        },
-        componentProps: {
-          title: 'Góc Tâm Sự',
-        }
-      });
-    </script>
 </body>
 </html>
