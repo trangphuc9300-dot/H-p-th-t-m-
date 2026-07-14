@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -11,64 +11,62 @@
             background: radial-gradient(circle at top right, #2c3e50, #000000);
             color: #ffffff;
             margin: 0;
-            padding: 40px 20px;
+            padding: 30px 20px;
             min-height: 100vh;
         }
         .container {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 30px;
-            max-width: 850px;
+            max-width: 1300px;
             margin: auto;
             text-align: center;
         }
         h1 { color: #00d2ff; margin-bottom: 10px; font-size: 32px; text-transform: uppercase; letter-spacing: 1px; }
-        p.subtitle { color: #ff9a9e; font-size: 18px; margin-bottom: 30px; font-weight: 600; }
+        p.subtitle { color: #ff9a9e; font-size: 18px; margin-bottom: 35px; font-weight: 600; }
         
-        .form-container { 
+        .workspace {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .section-box {
+            flex: 1;
+            min-width: 450px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 25px;
+            box-sizing: border-box;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .section-box h2 { font-size: 20px; margin-top: 0; margin-bottom: 20px; font-weight: 700; }
+        .box-chat { color: #00d2ff; }
+        .box-form { color: #ff9a9e; }
+        
+        .iframe-container { 
             width: 100%; 
+            height: 700px; 
             border-radius: 15px; 
             overflow: hidden; 
-            background: white; 
-            margin-bottom: 40px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: #ffffff; 
         }
         
-        /* Khu vực thiết kế các nút chức năng song hành */
-        .action-area {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
+        .quiz-area {
+            margin-top: 40px;
         }
-        .btn-link {
+        .btn-quiz {
             display: inline-block;
-            padding: 18px 35px;
+            padding: 18px 45px;
+            background: linear-gradient(45deg, #00d2ff, #3a7bd5);
             color: white;
             text-decoration: none;
             border-radius: 15px;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 18px;
             transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            min-width: 280px;
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.2);
         }
-        
-        /* Nút gọi Trợ lý AI */
-        .btn-bot {
-            background: linear-gradient(45deg, #00d2ff, #0072ff);
-        }
-        .btn-bot:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 210, 255, 0.4); }
-        
-        /* Nút Trắc nghiệm tâm lý */
-        .btn-quiz {
-            background: linear-gradient(45deg, #ff9a9e, #fecfef);
-            color: #333;
-        }
-        .btn-quiz:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 154, 158, 0.4); }
+        .btn-quiz:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 210, 255, 0.4); }
     </style>
 </head>
 <body>
@@ -77,17 +75,27 @@
         <h1>Góc Tâm Sự</h1>
         <p class="subtitle">✨ LẮNG NGHE & THẤU HIỂU ✨</p>
         
-        <h2>💌 GỬI CHIA SẺ ẨN DANH TẠI ĐÂY</h2>
-        <div class="form-container">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdOkFFUlrbiqhfrzr1BYzDW6wDcleTmh5ulQeHGzSvciE8E8A/viewform?embedded=true" width="100%" height="650" frameborder="0"></iframe>
+        <div class="workspace">
+            <!-- CỘT 1: TRÒ CHUYỆN VỚI TRỢ LÝ TÂM LÝ AI (DIFY) -->
+            <div class="section-box">
+                <h2 class="box-chat">🤖 TRÒ CHUYỆN CÙNG TRỢ LÝ TÂM LÝ AI</h2>
+                <div class="iframe-container">
+                    <iframe src="https://udify.app/chatbot/fMTEVa0TXrAqxx0X" style="width: 100%; height: 100%;" frameborder="0" allow="microphone"></iframe>
+                </div>
+            </div>
+            
+            <!-- CỘT 2: GỬI BIỂU MẪU ẨN DANH -->
+            <div class="section-box">
+                <h2 class="box-form">💌 GỬI CHIA SẺ ẨN DANH TẠI ĐÂY</h2>
+                <div class="iframe-container">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdOkFFUlrbiqhfrzr1BYzDW6wDcleTmh5ulQeHGzSvciE8E8A/viewform?embedded=true" width="100%" height="100%" frameborder="0"></iframe>
+                </div>
+            </div>
         </div>
 
-        <div class="action-area">
-            <!-- Đường liên kết trực tiếp vào thẳng cổng chat riêng tư của Bot -->
-            <a href="https://www.coze.com/store/bot/7661818497130987573" target="_blank" class="btn-link btn-bot">🤖 TRÒ CHUYỆN CÙNG TRỢ LÝ TÂM LÝ AI</a>
-            
-            <!-- Đường liên kết làm bài trắc nghiệm cảm xúc -->
-            <a href="https://www.flexiquiz.com/SC/N/28c896b2-0121-4dc0-a3aa-f3eb8b405f8e" target="_blank" class="btn-link btn-quiz">🚀 BẮT ĐẦU TRẮC NGHIỆM ĐÁNH GIÁ TÂM LÝ NHÉ</a>
+        <!-- KHU VỰC NÚT BẤM TRẮC NGHIỆM -->
+        <div class="quiz-area">
+            <a href="https://www.flexiquiz.com/SC/N/28c896b2-0121-4dc0-a3aa-f3eb8b405f8e" target="_blank" class="btn-quiz">🚀 BẮT ĐẦU TRẮC NGHIỆM ĐÁNH GIÁ TÂM LÝ NHÉ</a>
         </div>
     </div>
 
