@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -80,6 +80,13 @@
         },
         componentProps: {
           title: 'Hộp Thư Tâm Lý',
+        },
+        auth: {
+          type: 'token',
+          token: 'pat_vm12ZVNMOaIDDB60F44JJWbGwVWMK0biSUXxQ6LHXJVwy0yhhXrXnJFwOscI8HNV',
+          onRefreshToken: function () {
+            return 'pat_vm12ZVNMOaIDDB60F44JJWbGwVWMK0biSUXxQ6LHXJVwy0yhhXrXnJFwOscI8HNV';
+          }
         }
       });
     </script>
