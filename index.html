@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+       <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -70,25 +70,19 @@
         </div>
     </div>
 
-    <!-- Nhúng thư viện SDK chính thức của Coze -->
+    <!-- Cấu hình nhúng Web Component chính thức từ Coze tránh lỗi 502 -->
     <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
-    
     <script>
-      new CozeWebSDK.WebChatClient({
-        config: {
-          bot_id: '7661818497130987573',
-        },
-        componentProps: {
-          title: 'Hộp Thư Tâm Lý',
-        },
-        auth: {
-          type: 'token',
-          token: 'pat_vm12ZVNMOaIDDB60F44JJWbGwVWMK0biSUXxQ6LHXJVwy0yhhXrXnJFwOscI8HNV',
-          onRefreshToken: function () {
-            return 'pat_vm12ZVNMOaIDDB60F44JJWbGwVWMK0biSUXxQ6LHXJVwy0yhhXrXnJFwOscI8HNV';
-          }
-        }
-      });
+        const choiceet = new CozeWebSDK.WebChatClient({
+            config: {
+                bot_id: '7661818497130987573',
+            },
+            componentProps: {
+                title: 'Hộp Thư Tâm Lý',
+                icon: 'https://lf3-static.bytednsdoc.com/obj/eden-cn/ylaelieh7nuhps/coze/logo.png',
+                layout: 'pc',
+            }
+        });
     </script>
 </body>
 </html>
